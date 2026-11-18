@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açıkgöz Cila | Profesyonel Mobilya Boya & Cilahane Atölyesi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #12100e;
+            color: #f4f1ea;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Üst Karşılama Alanı (Hero) */
+        header {
+            background: linear-gradient(rgba(18, 16, 14, 0.85), rgba(18, 16, 14, 0.95)), 
+                        radial-gradient(circle at top, #3a2718 0%, #12100e 70%);
+            padding: 60px 20px 50px;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 163, 89, 0.25);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(212, 163, 89, 0.15);
+            color: #d4a359;
+            border: 1px solid rgba(212, 163, 89, 0.4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: #d4a359;
+        }
+
+        .subtitle {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #b8b0a4;
+            font-size: 1rem;
+        }
+
+        /* Hızlı Aksiyon Butonları */
+        .cta-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: #0b1a10;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-call {
+            background-color: #d4a359;
+            color: #12100e;
+            box-shadow: 0 4px 15px rgba(212, 163, 89, 0.3);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: #d4a359;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #d4a359;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Hizmetler Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: #1b1815;
+            border: 1px solid rgba(212, 163, 89, 0.15);
+            padding: 22px;
+            border-radius: 12px;
+            transition: border-color 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #d4a359;
+        }
+
+        .service-card h3 {
+            color: #f4f1ea;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: #9e9589;
+            font-size: 0.9rem;
+        }
+
+        /* Fotoğraf Galerisi */
+        .gallery-note {
+            text-align: center;
+            color: #9e9589;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            background: #1b1815;
+            border: 1px solid rgba(212, 163, 89, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            background-color: #26221e;
+        }
+
+        .gallery-caption {
+            padding: 14px;
+            font-size: 0.9rem;
+            color: #e0d9ce;
+            text-align: center;
+        }
+
+        /* İletişim ve Konum Kartı */
+        .contact-box {
+            background: #1b1815;
+            border: 1px solid rgba(212, 163, 89, 0.3);
+            border-radius: 16px;
+            padding: 30px 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .contact-item h4 {
+            color: #d4a359;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #e0d9ce;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .map-btn {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: rgba(212, 163, 89, 0.15);
+            border: 1px solid #d4a359;
+            color: #d4a359 !important;
+            border-radius: 8px;
+            font-size: 0.85rem !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            color: #6e675f;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Profesyonel Boya & Cila Atölyesi</div>
+        <h1>AÇIKGÖZ <span>CİLA</span></h1>
+        <p class="subtitle">Lake boya, klasik varak, doğal ahşap vernik ve mobilya yenileme işlemlerinde pürüzsüz işçilik ve kalıcı estetik.</p>
+        
+        <div class="cta-group">
+            <a href="https://wa.me/905372368198?text=Merhaba%20A%C3%A7%C4%B1kg%C3%B6z%20Cila,%20mobilya%20boya/cila%20i%C5%9Flemi%20i%C3%A7in%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" class="btn btn-whatsapp">
+                💬 WhatsApp Fiyat Teklifi
+            </a>
+            <a href="tel:05372368198" class="btn btn-call">
+                📞 0537 236 81 98
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hizmetlerimiz -->
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>✨ Lake Boya Uygulamaları</h3>
+                <p>Mat, ipek mat ve parlak (high gloss) yüzeylerde pürüzsüz, sararmaya dayanıklı fırın boya kalitesi.</p>
+            </div>
+            <div class="service-card">
+                <h3>🪵 Doğal Ahşap & Vernik</h3>
+                <p>Masif ve kaplama mobilyaların dokusunu koruyan ceviz, meşe, tik ve şeffaf koruyucu cila işlemleri.</p>
+            </div>
+            <div class="service-card">
+                <h3>👑 Varak & Eskitme Sanatı</h3>
+                <p>Klasik ve oymalı mobilyalar için altın/gümüş varak, patine ve özel eskitme restorasyonları.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚪 Kapı & Mutfak Yenileme</h3>
+                <p>Eskiyen oda kapıları, mutfak dolapları ve yemek odası takımlarının sıfır görünümüne kavuşturulması.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏛️ Antika Restorasyonu</h3>
+                <p>Tarihi ve eski değer taşıyan mobilyalarınızın orijinal dokusuna zarar vermeden özenle yenilenmesi.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎨 Özel Renk & Patine</h3>
+                <p>Mekânınıza ve tarzınıza uygun özel tonlama, eskitme ve patine boya uygulamaları.</p>
+            </div>
+        </div>
+
+        <!-- İşlerimiz / Fotoğraf Galerisi -->
+        <h2 class="section-title">Atölyemizden Çalışmalar</h2>
+        <p class="gallery-note">Tamamlanan lake, cila ve mobilya yenileme projelerimizden örnekler</p>
+        
+        <div class="gallery-grid">
+            <!-- 1. Fotoğraf Kartı -->
+            <div class="gallery-item">
+                <img src="is1.jpg" alt="Lake Boya Uygulaması">
+                <div class="gallery-caption">İpek Mat Lake Boya Uygulaması</div>
+            </div>
+
+            <!-- 2. Fotoğraf Kartı -->
+            <div class="gallery-item">
+                <img src="is2.jpg" alt="Ahşap Cila Yenileme">
+                <div class="gallery-caption">Doğal Ceviz Cila & Vernik Yenileme</div>
+            </div>
+
+            <!-- 3. Fotoğraf Kartı -->
+            <div class="gallery-item">
+                <img src="is3.jpg" alt="Klasik Mobilya Restorasyon">
+                <div class="gallery-caption">Klasik Takım & Varak Restorasyonu</div>
+            </div>
+        </div>
+
+        <!-- İletişim & Adres -->
+        <h2 class="section-title">İletişim & Konum</h2>
+        <div class="contact-box">
+            <div class="contact-item">
+                <h4>📍 Atölye Adresimiz</h4>
+                <p>Esenşehir Mahallesi, Kürkçüler Caddesi,<br>Eryılmaz Sokak No: 34 A1<br>Ümraniye / İstanbul</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Esen%C5%9Fehir+Mahallesi+K%C3%BCrk%C3%A7%C3%BCler+Caddesi+Ery%C4%B1lmaz+Sokak+No+34+%C3%9Cmraniye+%C4%B0stanbul" target="_blank" class="map-btn">
+                    🗺️ Google Haritalar'da Aç
+                </a>
+            </div>
+            <div class="contact-item">
+                <h4>📞 Doğrudan İletişim</h4>
+                <p>Telefon & WhatsApp:</p>
+                <p style="font-size: 1.2rem; font-weight: bold; margin: 6px 0;">
+                    <a href="tel:05372368198">0537 236 81 98</a>
+                </p>
+                <p style="color: #9e9589; font-size: 0.85rem;">Mobilyanızın fotoğrafını WhatsApp'tan göndererek hızlıca fiyat alabilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Açıkgöz Cila - Tüm Hakları Saklıdır.
+    </footer>
+
+</body>
+</html>
